@@ -1,10 +1,10 @@
 public class GDCofTwoNum {
     public static void main(String[] args) {
 
-        // find GCD between n1 and n2
+        // Find GCD (Greatest Common Divisor) or Highest Common Factor (HCF) between n1 and n2
         int n1 = 81, n2 = 153;
 
-        // initially set to gcd
+        // Initially set to gcd
         int gcd = 1;
 
         for (int i = 1; i <= n1 && i <= n2; ++i) {
