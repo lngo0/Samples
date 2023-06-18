@@ -47,9 +47,10 @@ public class FibonacciRecur {
     }
 
     int fib (int n) {
+        //base case
         if (n < 2)
             return (1);
-        else
+        else //reduced problem
             return (fib(n - 1) + fib(n - 2));
     }
 }
