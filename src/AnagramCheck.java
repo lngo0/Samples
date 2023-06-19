@@ -1,16 +1,21 @@
 import java.util.Arrays;
-import java.util.HashMap;
+import java.util.Scanner;
 
 public class AnagramCheck {
     public static void main(String[] args) {
-        boolean isAnagram = anagramCheck("now", "own");
-        System.out.println("" + isAnagram);
+        Scanner scanner = new Scanner(System.in);
+        String word1 = scanner.nextLine();
+        String word2 = scanner.nextLine();
+        boolean isAnagram = isAnagram(word1, word2);
+        if (isAnagram) {
+            System.out.println("Anagrams");
+        } else System.out.println("Not Anagrams");
     }
     //using sort() and equals() method:
-    static boolean anagramCheck(String first, String second) {
+    static boolean isAnagram(String first, String second) {
         //Remove whitespace
-        first = first.replaceAll("\\s", "");
-        second = second.replaceAll("\\s", "");
+        first = first.replaceAll("\\s", "").toLowerCase();
+        second = second.replaceAll("\\s", "").toLowerCase();
 
         if (first.length() != second.length()) {
             return false;
@@ -23,7 +28,7 @@ public class AnagramCheck {
         return Arrays.equals(firstArr, secondArr);
     }
     //Using Iterative  method
-    static boolean  isAnagram(String first, String second) {
+    static boolean  isAnagramRecur(String first, String second) {
         // remove all whitespaces and convert strings to lowercase
         first  = first.replaceAll("\\s", "").toLowerCase();
         second = second.replaceAll("\\s", "").toLowerCase();
