@@ -16,7 +16,11 @@ public class PatternDisplay {
                }
                - Try to find the formula relating row & col
          */
-        halfPyramidStar(rows);
+//        halfPyramidStar(rows);
+
+        halfPyramidNum(rows);
+
+
     }
 
     private static void emptyLine() {
@@ -35,6 +39,23 @@ public class PatternDisplay {
         for (int i = 1; i <= n; ++i) {
             for (int col = 1; col <= i; ++col) {
                 System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+
+    /*
+    Half pyramid Number pattern
+                1
+                1 2
+                1 2 3
+                1 2 3 4
+                1 2 3 4 5
+     */
+    private static void halfPyramidNum(int n) {
+        for (int row = 1; row <= n; ++row) {
+            for (int col = 1; col <= row; ++col) {
+                System.out.print(col + " ");
             }
             System.out.println();
         }
