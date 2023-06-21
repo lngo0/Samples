@@ -18,9 +18,9 @@ public class PatternDisplay {
          */
 //        halfPyramidStar(rows);
 
-        halfPyramidNum(rows);
+//        halfPyramidNum(rows);
 
-
+        halfPyramidNum2(rows);
     }
 
     private static void emptyLine() {
@@ -56,6 +56,23 @@ public class PatternDisplay {
         for (int row = 1; row <= n; ++row) {
             for (int col = 1; col <= row; ++col) {
                 System.out.print(col + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    /*
+    Half pyramid Number pattern
+                1
+                2 2
+                3 3 3
+                4 4 4 4
+                5 5 5 5 5
+     */
+    private static void halfPyramidNum2(int n) {
+        for (int row = 0; row < n; ++row) {
+            for (int col = 0; col < row; ++col) {
+                System.out.print(row + " ");
             }
             System.out.println();
         }
