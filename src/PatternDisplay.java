@@ -20,7 +20,10 @@ public class PatternDisplay {
 
 //        halfPyramidNum(rows);
 
-        halfPyramidNum2(rows);
+//        halfPyramidNum2(rows);
+
+        halfPyramidNum3(rows);
+
     }
 
     private static void emptyLine() {
@@ -73,6 +76,25 @@ public class PatternDisplay {
         for (int row = 0; row < n; ++row) {
             for (int col = 0; col < row; ++col) {
                 System.out.print(row + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    /*
+    Half pyramid Number pattern
+                1
+                0 1
+                1 0 1
+                0 1 0 1
+                1 0 1 0 1
+     */
+    private static void halfPyramidNum3(int n) {
+        for (int row = 0; row < n; row++) {
+            int num = row % 2 == 0 ? 0 : 1;
+            for (int col = 0; col < row; col++) {
+                System.out.print(num + " ");
+                num = 1 - num;
             }
             System.out.println();
         }
