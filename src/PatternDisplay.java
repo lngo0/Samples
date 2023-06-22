@@ -24,7 +24,9 @@ public class PatternDisplay {
 
 //        halfPyramidNum3(rows);
 
-        halfPyramidChar(rows);
+//        halfPyramidChar(rows);
+
+        halfPyramidChar2(rows);
     }
 
     private static void emptyLine() {
@@ -112,6 +114,24 @@ public class PatternDisplay {
     private static void halfPyramidChar(int n) {
         for(int row = 0; row < n; row++) {
             for(char ch = 'A'; ch <= 'A' + row; ch++) {
+                System.out.print(ch + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    /*
+    Same Row Same Character triangle pattern
+            A
+            B B
+            C C C
+            D D D D
+            E E E E E
+     */
+    private static void halfPyramidChar2(int n) {
+        for(int row = 0; row < n; row++) {
+            char ch = (char) ('A' + row);
+            for(int col = 0; col <= row ; col++) {
                 System.out.print(ch + " ");
             }
             System.out.println();
