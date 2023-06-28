@@ -11,7 +11,7 @@ public class PatternDisplay {
                for (int row = 1; row <= n; row++) {
                     //For every row, run the col
                     for (int col = 1; col <= row; col++) {
-
+f
                     }
                }
                - Try to find the formula relating row & col
@@ -28,7 +28,57 @@ public class PatternDisplay {
 
 //        halfPyramidChar2(rows);
 
-        halfPyramidChar3(rows);
+//        halfPyramidChar3(rows);
+
+        invHalfPyramidChar(rows);
+
+//        invHalfPyramidStar(rows);
+
+//        invHalfPyramidNum(rows);
+
+//        invHalfPyramidStar(rows);
+
+//        floydTriangle(rows);
+
+//        invFloydTriangle(rows);
+
+//        fullPyramidStar(rows);
+
+//        invFullPyramidStar(rows);
+
+//        fullPyramidChar(rows);
+
+//        halfDiamondStar(rows);
+
+//        fullDiamondStar(rows, col);
+
+//        emptyDiamondOuterStars(rows);
+
+//        bowTieStars(rows);
+
+//        squareStars(rows);
+
+//        fullPyramidNum(rows, count1, count2);
+
+//        fullPyramidNum2(rows);
+
+//        invFullPyramidNum(rows, count1, count2);
+
+//        fullPyramidNum(rows, col, count1, count2);
+
+//        fullDiamondNum2(rows);
+
+//        pascalTriangle(rows, coeff);
+//        emptyLine();
+
+//        invFullPascalTriangle(rows, coeff);
+
+//        numSpaceNum(rows);
+
+//        boxOfNumMin(4);
+
+//        boxOfNumMax(4);
+
 
     }
 
@@ -152,6 +202,22 @@ public class PatternDisplay {
     private static void halfPyramidChar3(int n) {
         for(int row = 0; row < n; row++) {
             for(char ch = (char) ('E' - row); ch <= 'E'; ch++) {
+                System.out.print(ch + " ");
+            }
+            System.out.println();
+        }
+    }
+    /*
+    Inverted Character triangle pattern
+            A B C D E
+            A B C D
+            A B C
+            A B
+            A
+     */
+    private static void invHalfPyramidChar(int n) {
+        for(int row = 0; row < n; row++) {
+            for(char ch = 'A'; ch <= 'A' + (n - row - 1); ch++) {
                 System.out.print(ch + " ");
             }
             System.out.println();
