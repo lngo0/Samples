@@ -30,9 +30,9 @@ f
 
 //        halfPyramidChar3(rows);
 
-        invHalfPyramidChar(rows);
+//        invHalfPyramidChar(rows);
 
-//        invHalfPyramidStar(rows);
+        invHalfPyramidStar(rows);
 
 //        invHalfPyramidNum(rows);
 
@@ -207,6 +207,7 @@ f
             System.out.println();
         }
     }
+
     /*
     Inverted Character triangle pattern
             A B C D E
@@ -223,4 +224,22 @@ f
             System.out.println();
         }
     }
+
+    /*
+    Inverted half pyramid Star pattern
+                * * * * *
+                * * * *
+                * * *
+                * *
+                *
+     */
+    private static void invHalfPyramidStar(int n) {
+        for (int row = n; row >= 1; --row) {
+            for (int col = 1; col <= row; ++col) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+
 }
