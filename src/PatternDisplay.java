@@ -32,13 +32,13 @@ f
 
 //        invHalfPyramidChar(rows);
 
-        invHalfPyramidStar(rows);
+//        invHalfPyramidStar(rows);
 
 //        invHalfPyramidNum(rows);
 
 //        invHalfPyramidStar(rows);
 
-//        floydTriangle(rows);
+        floydTriangle(rows);
 
 //        invFloydTriangle(rows);
 
@@ -242,4 +242,41 @@ f
         }
     }
 
+    /*
+    Inverted half pyramid number pattern
+                1 2 3 4 5
+                1 2 3 4
+                1 2 3
+                1 2
+                1
+     */
+    private static void invHalfPyramidNum(int n) {
+        for (int row = n; row >= 1; --row) {
+            for (int col = 1; col <= row; ++col) {
+                System.out.print(col + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    /*
+    Floyd triangle pattern
+            1
+            2 3
+            4 5 6
+            7 8 9 10
+            11 12 13 14 15
+     */
+    private static void floydTriangle(int n) {
+        int floynum = 1;
+        for(int row = 1; row <= n; row++) {
+
+            for(int col = 1; col <= row; col++) {
+                System.out.print(floynum + " ");
+                ++floynum;
+            }
+
+            System.out.println();
+        }
+    }
 }
