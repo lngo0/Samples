@@ -38,9 +38,9 @@ f
 
 //        invHalfPyramidStar(rows);
 
-        floydTriangle(rows);
+//        floydTriangle(rows);
 
-//        invFloydTriangle(rows);
+        invFloydTriangle(rows);
 
 //        fullPyramidStar(rows);
 
@@ -274,6 +274,27 @@ f
             for(int col = 1; col <= row; col++) {
                 System.out.print(floynum + " ");
                 ++floynum;
+            }
+
+            System.out.println();
+        }
+    }
+
+    /*
+    Inverted Floyd triangle pattern
+            15 14 13 12 11
+            10 9 8 7
+            6 5 4
+            3 2
+            1
+     */
+    private static void invFloydTriangle(int n) {
+        int floynum2 = 15;
+        for(int row = n; row >= 1; row--) {
+
+            for(int col = 1; col <= row; col++) {
+                System.out.print(floynum2 + " ");
+                --floynum2;
             }
 
             System.out.println();
