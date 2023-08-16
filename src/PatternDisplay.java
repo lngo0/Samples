@@ -40,9 +40,9 @@ f
 
 //        floydTriangle(rows);
 
-        invFloydTriangle(rows);
+//        invFloydTriangle(rows);
 
-//        fullPyramidStar(rows);
+        fullPyramidStar(rows);
 
 //        invFullPyramidStar(rows);
 
@@ -295,6 +295,32 @@ f
             for(int col = 1; col <= row; col++) {
                 System.out.print(floynum2 + " ");
                 --floynum2;
+            }
+
+            System.out.println();
+        }
+    }
+    /*
+    Full pyramid Star pattern
+                        *
+                      * * *
+                    * * * * *
+                  * * * * * * *
+                * * * * * * * * *
+     */
+    private static void fullPyramidStar(int n) {
+        for (int row = 0; row < n; row++) {
+            //space = n - row -1
+            for (int space = 0; space < n - row - 1; space++) {
+                System.out.print("  ");
+            }
+            //star = 2*row + 1
+            for (int col = 0; col < 2 * row + 1; col++) {
+                System.out.print("* ");
+            }
+            //space - not really needed once you have the star
+            for (int space = 0; space < n - row - 1; space++) {
+                System.out.print("  ");
             }
 
             System.out.println();
