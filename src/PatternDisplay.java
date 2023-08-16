@@ -42,9 +42,9 @@ f
 
 //        invFloydTriangle(rows);
 
-        fullPyramidStar(rows);
+//        fullPyramidStar(rows);
 
-//        invFullPyramidStar(rows);
+        invFullPyramidStar(rows);
 
 //        fullPyramidChar(rows);
 
@@ -321,6 +321,36 @@ f
             //space - not really needed once you have the star
             for (int space = 0; space < n - row - 1; space++) {
                 System.out.print("  ");
+            }
+
+            System.out.println();
+        }
+    }
+
+    /*
+    Inverted full pyramid Star pattern
+                * * * * * * * * *
+                  * * * * * * *
+                    * * * * *
+                      * * *
+                        *
+     */
+    private static void invFullPyramidStar(int n) {
+        for(int row = 0; row < n; row++) {
+            //space = row
+            for (int space = 0; space < row; space++) {
+                System.out.print("  ");
+            }
+            //Break down First half of column, then Second half of column
+//            for (int col = 0; col < row - 1; ++col) {
+//                System.out.print("* ");
+//            }
+//            for (int col = row; col <= 2 * row - 1; ++col) {
+//                System.out.print("* ");
+//            }
+            //Or user this formula 2*n - (2*row + 1)
+            for (int col = 0; col < 2*n - (2*row + 1); col++) {
+                System.out.print("* ");
             }
 
             System.out.println();
