@@ -44,9 +44,9 @@ f
 
 //        fullPyramidStar(rows);
 
-        invFullPyramidStar(rows);
+//        invFullPyramidStar(rows);
 
-//        fullPyramidChar(rows);
+        fullPyramidChar(rows);
 
 //        halfDiamondStar(rows);
 
@@ -351,6 +351,35 @@ f
             //Or user this formula 2*n - (2*row + 1)
             for (int col = 0; col < 2*n - (2*row + 1); col++) {
                 System.out.print("* ");
+            }
+
+            System.out.println();
+        }
+    }
+
+    /*
+    Full pyramid Character pattern
+                        A
+                      A B C
+                    A B C D C
+                  A B C D E D C
+                A B C D E F E D C
+     */
+    private static void fullPyramidChar(int n) {
+        for (int row = 0; row < n; row++) {
+            //space = n - row -1
+            for (int space = 0; space < (n - row - 1); space++) {
+                System.out.print("  ");
+            }
+            //character = 2*row + 1
+            char ch = 'A';
+            int breakPoint = (2 * row + 1) / 2;
+            for (int col = 0; col < (2 * row + 1); col++) {
+                System.out.print(ch + " ");
+                if (col <= breakPoint)
+                    ch++;
+                else
+                    ch--;
             }
 
             System.out.println();
