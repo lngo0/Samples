@@ -46,9 +46,9 @@ f
 
 //        invFullPyramidStar(rows);
 
-        fullPyramidChar(rows);
+//        fullPyramidChar(rows);
 
-//        halfDiamondStar(rows);
+        halfDiamondStar(rows);
 
 //        fullDiamondStar(rows, col);
 
@@ -382,6 +382,29 @@ f
                     ch--;
             }
 
+            System.out.println();
+        }
+    }
+
+    /*
+    Half Diamond Star pattern
+                *
+                * *
+                * * *
+                * * * *
+                * * * * *
+                * * * *
+                * * *
+                * *
+                *
+     */
+    private static void halfDiamondStar(int n) {
+        //Outer loop is 2n-1 with n = 5
+        for (int row = 0; row <= 2 * n - 1; row++) {
+            int totalColsInRow = row >= n ? (2 * n - row) : row;
+            for (int col = 1; col <= totalColsInRow; ++col) {
+                System.out.print("* ");
+            }
             System.out.println();
         }
     }
