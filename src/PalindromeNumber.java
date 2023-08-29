@@ -15,9 +15,14 @@ public class PalindromeNumber {
         return x == reverse;
     }
 
+    static boolean isPalindromeOneLine(int x) {
+        return String.valueOf(x).contentEquals(new StringBuilder(String.valueOf(x)).reverse());
+    }
+
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         int x = s.nextInt();
         System.out.println("Is "+ x +" palindrome: " + isPalindrome(x));
+        System.out.println("Is "+ x +" palindrome 1 line: " + isPalindromeOneLine(x));
     }
 }
