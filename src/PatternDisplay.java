@@ -1,6 +1,7 @@
 public class PatternDisplay {
     public static void main(String[] args) {
-        int rows = 5;
+        int rows = 5,
+                col = 0;
         /*
             Figure out the "Pattern"
             1. Number of lines = number of rows = number of times the outer loop will run
@@ -48,9 +49,9 @@ f
 
 //        fullPyramidChar(rows);
 
-        halfDiamondStar(rows);
+//        halfDiamondStar(rows);
 
-//        fullDiamondStar(rows, col);
+        fullDiamondStar(rows, col);
 
 //        emptyDiamondOuterStars(rows);
 
@@ -405,6 +406,35 @@ f
             for (int col = 1; col <= totalColsInRow; ++col) {
                 System.out.print("* ");
             }
+            System.out.println();
+        }
+    }
+
+    /*
+        Full Diamond Star pattern
+               *
+              * *
+             * * *
+            * * * *
+           * * * * *
+            * * * *
+             * * *
+              * *
+               *
+     */
+    private static void fullDiamondStar(int n, int col) {
+        for (int row = 0; row < 2 * n; row++) {
+            int totalColsInRow = row > n ? (2 * n - row) : row;
+            //spacing
+            int noOfSpaces = n - totalColsInRow;
+            for (int space = 1; space <= noOfSpaces; space++) {
+                System.out.print(" ");
+            }
+
+            for (col = 0; col < totalColsInRow; col++) {
+                System.out.print("* ");
+            }
+
             System.out.println();
         }
     }
