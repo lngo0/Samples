@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class IsSumOfTwoPrime {
     // Method to Check Prime Number
     private static int check_prime(int num){
@@ -20,6 +22,9 @@ public class IsSumOfTwoPrime {
         }
     }
     public static void main(String[] args) {
-        find(18);
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        find(n);
+        sc.close();
     }
 }
