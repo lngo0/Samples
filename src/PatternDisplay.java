@@ -51,9 +51,9 @@ f
 
 //        halfDiamondStar(rows);
 
-        fullDiamondStar(rows, col);
+//        fullDiamondStar(rows, col);
 
-//        emptyDiamondOuterStars(rows);
+        emptyDiamondOuterStars(rows);
 
 //        bowTieStars(rows);
 
@@ -435,6 +435,57 @@ f
                 System.out.print("* ");
             }
 
+            System.out.println();
+        }
+    }
+
+    /*
+      Two opposite start patterns forming empty diamond in middle
+                      * * * * * * * * * *
+                      * * * *     * * * *
+                      * * *         * * *
+                      * *             * *
+                      *                 *
+                      *                 *
+                      * *             * *
+                      * * *         * * *
+                      * * * *     * * * *
+                      * * * * * * * * * *
+
+     */
+    private static void emptyDiamondOuterStars(int n) {
+        int iniS = 0;
+        for (int row = 0; row < n; row++) {
+            //stars = n - row
+            for (int col = 1; col <= n - row; col++) {
+                System.out.print("* ");
+            }
+            //spaces
+            for (int col = 0; col < iniS; col++) {
+                System.out.print("  ");
+            }
+            //stars
+            for (int col = 1; col <= n - row; col++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+            iniS += 2;
+        }
+        iniS = 2 * n - 2;
+        for (int row = 1; row <= n; row++) {
+            //stars = row
+            for (int col = 1; col <= row; col++) {
+                System.out.print("* ");
+            }
+            //spaces
+            for (int col = 1; col < iniS; col++) {
+                System.out.print("  ");
+            }
+            //stars
+            for (int col = 1; col <= row; col++) {
+                System.out.print("* ");
+            }
+            iniS -= 2;
             System.out.println();
         }
     }
