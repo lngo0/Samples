@@ -55,9 +55,9 @@ f
 
 //        emptyDiamondOuterStars(rows);
 
-        bowTieStars(rows);
+//        bowTieStars(rows);
 
-//        squareStars(rows);
+        squareStars(rows);
 
 //        fullPyramidNum(rows, count1, count2);
 
@@ -521,6 +521,27 @@ f
             System.out.println();
             if (row < n) spaces -= 2;
             else spaces += 2;
+        }
+    }
+    /*
+        Square of stars
+                    * * * * *
+                    *       *
+                    *       *
+                    *       *
+                    * * * * *
+
+     */
+    private static void squareStars(int n) {
+        for (int row = 0; row < n; ++row) {
+            for (int col = 0; col < n; col++) {
+                if (row == 0 || col == 0 || row == n-1 || col == n-1) {
+                    System.out.print("* ");
+                } else {
+                    System.out.print("  ");
+                }
+            }
+            System.out.println();
         }
     }
 }
