@@ -1,7 +1,9 @@
 public class PatternDisplay {
     public static void main(String[] args) {
         int rows = 5,
-                col = 0;
+                col = 0,
+                count1 = 0,
+                count2 = 0;
         /*
             Figure out the "Pattern"
             1. Number of lines = number of rows = number of times the outer loop will run
@@ -57,9 +59,9 @@ f
 
 //        bowTieStars(rows);
 
-        squareStars(rows);
+//        squareStars(rows);
 
-//        fullPyramidNum(rows, count1, count2);
+        fullPyramidNum(rows, count1, count2);
 
 //        fullPyramidNum2(rows);
 
@@ -541,6 +543,38 @@ f
                     System.out.print("  ");
                 }
             }
+            System.out.println();
+        }
+    }
+
+    /*
+       Full pyramid number pattern
+                   1
+                 2 3 2
+               3 4 5 4 3
+             4 5 6 7 6 5 4
+           5 6 7 8 9 8 7 6 5
+     */
+    private static void fullPyramidNum(int n, int count1, int count2) {
+        for (int row = 1; row <= n; ++row) {
+            for (int space = 0; space < n - row; ++space) {
+                System.out.print("  ");
+                ++count1;
+            }
+            int col = 0;
+            while (col != 2 * row - 1) {
+                if (count1 <= n - 1) {
+                    System.out.print(col + row + " ");
+                    ++count1;
+                } else {
+                    ++count2;
+                    System.out.print((col + row - 2 * count2) + " ");
+                }
+
+                col++;
+            }
+            count2 = count1 = col = 0;
+
             System.out.println();
         }
     }
