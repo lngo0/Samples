@@ -63,9 +63,9 @@ f
 
 //        fullPyramidNum(rows, count1, count2);
 
-        fullPyramidNum2(rows);
+//        fullPyramidNum2(rows);
 
-//        invFullPyramidNum(rows, count1, count2);
+        invFullPyramidNum(rows, count1, count2);
 
 //        fullPyramidNum(rows, col, count1, count2);
 
@@ -600,6 +600,101 @@ f
             for (int col = 2; col <= row; col++) {
                 System.out.print(col + " ");
             }
+            System.out.println();
+        }
+    }
+
+    /*
+       Full pyramid number pattern
+                   1
+                 1 2 1
+               1 2 3 2 1
+             1 2 3 4 3 2 1
+           1 2 3 4 5 4 3 2 1
+     */
+    private static void fullPyramidNum3(int n, int count1, int count2) {
+        for (int row = 1; row <= n; ++row) {
+            for (int space = 1; space <= n - row; ++space) {
+                System.out.print("  ");
+                ++count1;
+            }
+            int col = 1;
+            while (col != 2 * row) {
+                if (count1 <= n - 1) {
+                    System.out.print(col + " ");
+                    ++count1;
+                } else {
+                    ++count2;
+                    System.out.print((col - 2 * count2) + " ");
+                }
+
+                col++;
+            }
+            count2 = count1 = col = 0;
+
+            System.out.println();
+        }
+    }
+
+    /*
+    Full Diamond Number pattern
+                    1
+                  2 1 2
+                3 2 1 2 3
+              4 3 2 1 2 3 4
+            5 4 3 2 1 2 3 4 5
+              4 3 2 1 2 3 4
+                3 2 1 2 3
+                  2 1 2
+                    1
+     */
+    private static void fullDiamondNum2(int n) {
+        for (int row = 1; row <= 2 * n; row++) {
+
+            int noOfCol = row > n ? 2 * n - row: row;
+            //spacing
+            for (int space = 0; space < n - noOfCol; space++) {
+                System.out.print("  ");
+            }
+
+            for (int col = noOfCol; col >= 1; col--) {
+                System.out.print(col + " ");
+            }
+            for (int col = 2; col <= noOfCol; col++) {
+                System.out.print(col + " ");
+            }
+
+            System.out.println();
+        }
+    }
+
+    /*
+    Inverted Full pyramid number pattern
+        5 6 7 8 9 8 7 6 5
+          4 5 6 7 6 5 4
+            3 4 5 4 3
+              2 3 2
+                1
+
+     */
+    private static void invFullPyramidNum(int n, int count1, int count2) {
+        for (int i = n; i >= 1; --i) {
+            for (int space = 1; space <= n - i; ++space) {
+                System.out.print("  ");
+                ++count1;
+            }
+            int col;
+            for (col = 0; col != 2 * i - 1; col++) {
+                if (count1 <= n - 1) {
+                    System.out.print((i + col) + " ");
+                    ++count1;
+                } else {
+                    ++count2;
+                    System.out.print((i + col - 2 * count2) + " ");
+                }
+            }
+            count2 = count1 = col = 0;
+
             System.out.println();
         }
     }
