@@ -5,3 +5,7 @@ Sample of coding challenges
     Binary search
     Binary search in 2D array
     Binary search recursive
+    Check Password Strength
+    Check Prime Number
+    Factorial
+    Fibonacci Recursion
