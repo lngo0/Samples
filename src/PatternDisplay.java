@@ -70,10 +70,10 @@ f
 
 //        fullDiamondNum2(rows);
 
-        pascalTriangle(rows, coeff);
-        emptyLine();
+//        pascalTriangle(rows, coeff);
+//        emptyLine();
 
-//        invFullPascalTriangle(rows, coeff);
+        invFullPascalTriangle(rows, coeff);
 
 //        numSpaceNum(rows);
 
@@ -715,6 +715,33 @@ f
             }
 
             for(int col = 0; col <= row; col++) {
+                if (col == 0 || row == 0)
+                    coeff = 1;
+                else
+                    coeff = coeff * (row - col + 1) / col;
+
+                System.out.printf("%4d", coeff);
+            }
+            System.out.println();
+        }
+    }
+
+    /*
+    Inverted Pascal triangle pattern
+           1   5  10  10   5   1
+             1   4   6   4   1
+               1   3   3   1
+                 1   2   1
+                   1   1
+                     1
+     */
+    private static void invFullPascalTriangle(int n, int coeff) {
+        for (int row = n; row >= 0; row--) {
+            for (int space = n - row; space > 0; --space) {
+                System.out.print("  ");
+            }
+
+            for (int col = 0; col <= row; col++) {
                 if (col == 0 || row == 0)
                     coeff = 1;
                 else
