@@ -3,7 +3,8 @@ public class PatternDisplay {
         int rows = 5,
                 col = 0,
                 count1 = 0,
-                count2 = 0;
+                count2 = 0,
+                coeff = 1;
         /*
             Figure out the "Pattern"
             1. Number of lines = number of rows = number of times the outer loop will run
@@ -65,14 +66,12 @@ f
 
 //        fullPyramidNum2(rows);
 
-        invFullPyramidNum(rows, count1, count2);
-
-//        fullPyramidNum(rows, col, count1, count2);
+//        invFullPyramidNum(rows, count1, count2);
 
 //        fullDiamondNum2(rows);
 
-//        pascalTriangle(rows, coeff);
-//        emptyLine();
+        pascalTriangle(rows, coeff);
+        emptyLine();
 
 //        invFullPascalTriangle(rows, coeff);
 
@@ -695,6 +694,34 @@ f
             }
             count2 = count1 = col = 0;
 
+            System.out.println();
+        }
+    }
+
+    /*
+    Pascal triangle pattern
+                     1
+                   1   1
+                 1   2   1
+               1   3   3   1
+             1   4   6   4   1
+           1   5  10  10   5   1
+
+     */
+    private static void pascalTriangle(int n, int coeff) {
+        for(int row = 0; row <= n; row++) {
+            for(int space = 1; space <= n - row; ++space) {
+                System.out.print("  ");
+            }
+
+            for(int col = 0; col <= row; col++) {
+                if (col == 0 || row == 0)
+                    coeff = 1;
+                else
+                    coeff = coeff * (row - col + 1) / col;
+
+                System.out.printf("%4d", coeff);
+            }
             System.out.println();
         }
     }
