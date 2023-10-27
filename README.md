@@ -9,3 +9,7 @@ Sample of coding challenges
     Check Prime Number
     Factorial
     Fibonacci Recursion
+    Find Missing Number
+    Greatest Common Divisor of two number
+    Is the sum of two prime numer
+    Less Common Multiple of two number
